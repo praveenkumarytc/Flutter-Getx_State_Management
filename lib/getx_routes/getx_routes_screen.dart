@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx/getx_routes/screen_one.dart';
@@ -16,16 +14,20 @@ class _GetXRoutesScreenState extends State<GetXRoutesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Getx Routes'),
+        title: const Text('Getx Routes'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          TextButton(onPressed: (){
-          //  Navigator.push(context, MaterialPageRoute(builder: (context) => ScreenOne()));
-            Get.to(ScreenOne(name: 'Asif Taj',));
-          }, child: Text('Go to Screen 1'))
+          TextButton(
+              onPressed: () {
+                //  Navigator.push(context, MaterialPageRoute(builder: (context) => ScreenOne()));
+                Get.to(const ScreenOne(
+                  name: 'Asif Taj',
+                ));
+              },
+              child: const Text('Go to Screen 1'))
         ],
       ),
     );

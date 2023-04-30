@@ -19,13 +19,13 @@ class _StateManagementScreenState extends State<StateManagementScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('GetX State Management Example'),
+        title: const Text('GetX State Management Example'),
       ),
       body: ListView(
         children: [
           Card(
             child: ListTile(
-              onTap: (){
+              onTap: () {
                 Get.to(const CounterScreen());
               },
               title: const Text('GetX counter example'),
@@ -34,7 +34,7 @@ class _StateManagementScreenState extends State<StateManagementScreen> {
           ),
           Card(
             child: ListTile(
-              onTap: (){
+              onTap: () {
                 Get.to(const ExampleTwo());
               },
               title: const Text('Example two'),
@@ -43,7 +43,7 @@ class _StateManagementScreenState extends State<StateManagementScreen> {
           ),
           Card(
             child: ListTile(
-              onTap: (){
+              onTap: () {
                 Get.to(const FavouriteScreen());
               },
               title: const Text('Favourite App'),
@@ -52,17 +52,16 @@ class _StateManagementScreenState extends State<StateManagementScreen> {
           ),
           Card(
             child: ListTile(
-              onTap: (){
+              onTap: () {
                 Get.to(const ImagePickerScreen());
               },
               title: const Text('GetX Image Picker'),
               subtitle: const Text('How to pick image with Getx'),
             ),
           ),
-
           Card(
             child: ListTile(
-              onTap: (){
+              onTap: () {
                 Get.to(const LoginScreen());
               },
               title: const Text('Login API with GetX'),

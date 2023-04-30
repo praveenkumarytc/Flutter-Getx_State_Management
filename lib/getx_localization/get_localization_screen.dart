@@ -1,8 +1,5 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_utils/src/extensions/internacionalization.dart';
 
 class GetXLocalizationScreen extends StatefulWidget {
   const GetXLocalizationScreen({Key? key}) : super(key: key);
@@ -15,9 +12,7 @@ class _GetXLocalizationScreenState extends State<GetXLocalizationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Getx Localization')
-      ),
+      appBar: AppBar(title: const Text('Getx Localization')),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -25,31 +20,33 @@ class _GetXLocalizationScreenState extends State<GetXLocalizationScreen> {
           ListTile(
             title: Text(
               'message'.tr,
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
             subtitle: Text(
               'name'.tr,
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
           ),
-
-         SizedBox(height: 40,),
-         Row(
-           mainAxisAlignment: MainAxisAlignment.center,
-           crossAxisAlignment: CrossAxisAlignment.center,
-           children: [
-             OutlinedButton(
-               onPressed: () => Get.updateLocale(const Locale('en', 'US')),
-               child: const Text('English'),
-             ),
-             SizedBox(width: 40,),
-             OutlinedButton(
-               onPressed: () => Get.updateLocale(const Locale('ur', 'PK')),
-               child: const Text('Urdu'),
-             ),
-
-           ],
-         )
+          const SizedBox(
+            height: 40,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              OutlinedButton(
+                onPressed: () => Get.updateLocale(const Locale('en', 'US')),
+                child: const Text('English'),
+              ),
+              const SizedBox(
+                width: 40,
+              ),
+              OutlinedButton(
+                onPressed: () => Get.updateLocale(const Locale('ur', 'PK')),
+                child: const Text('Urdu'),
+              ),
+            ],
+          )
         ],
       ),
     );

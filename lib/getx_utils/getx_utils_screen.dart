@@ -13,52 +13,41 @@ class _GetXUtilScreenState extends State<GetXUtilScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('GetX Tutorials'),
+        title: const Text('GetX Tutorials'),
       ),
       body: Column(
         children: [
           Card(
             child: ListTile(
-              onTap: (){
-                Get.snackbar(
-                    'Asif Taj',
-                    'Subscribe to my channel' ,
-                    icon: Icon(Icons.add),
-                    onTap: (snap){
-
-                    },
-                    mainButton: TextButton(onPressed: (){}, child: Text('Click')),
-                    backgroundColor: Colors.blue ,
-                    snackPosition: SnackPosition.BOTTOM
-                );
+              onTap: () {
+                Get.snackbar('Asif Taj', 'Subscribe to my channel', icon: const Icon(Icons.add), onTap: (snap) {}, mainButton: TextButton(onPressed: () {}, child: const Text('Click')), backgroundColor: Colors.blue, snackPosition: SnackPosition.BOTTOM);
               },
-              title: Text('Snakbar'),
-              subtitle: Text('Getx Snakbar'),
+              title: const Text('Snakbar'),
+              subtitle: const Text('Getx Snakbar'),
             ),
           ),
           Card(
             child: ListTile(
-              onTap: (){
-
+              onTap: () {
                 Get.defaultDialog(
-                  titlePadding: EdgeInsets.only(top: 20),
-                  title: 'Delete Chat' ,
-                  contentPadding: EdgeInsets.all(20),
-                  titleStyle: TextStyle(color: Colors.red),
+                  titlePadding: const EdgeInsets.only(top: 20),
+                  title: 'Delete Chat',
+                  contentPadding: const EdgeInsets.all(20),
+                  titleStyle: const TextStyle(color: Colors.red),
                   //   middleText: 'Are you sure you want to delete this chat? This will also delete the messages related to Posts ' ,
-                  textCancel: 'Yes' ,
-                  textConfirm: 'No' ,
+                  textCancel: 'Yes',
+                  textConfirm: 'No',
                   //  buttonColor: Colors.red,
                   confirm: GestureDetector(
-                      onTap: (){
+                      onTap: () {
                         Get.back();
                       },
-                      child: const Text('Confirm')) ,
+                      child: const Text('Confirm')),
                   cancel: GestureDetector(
-                      onTap: (){
+                      onTap: () {
                         Get.back();
                       },
-                      child: Text('Cancel')) ,
+                      child: const Text('Cancel')),
                   //  onCancel: (){
                   //    Get.back();
                   //  },
@@ -74,37 +63,31 @@ class _GetXUtilScreenState extends State<GetXUtilScreen> {
                   //
                   //    ],
                   //  )
-
                 );
               },
-              title: Text('Get Dialaog Alert'),
-              subtitle: Text('Get Dialog alert example'),
+              title: const Text('Get Dialaog Alert'),
+              subtitle: const Text('Get Dialog alert example'),
             ),
           ),
           Card(
             child: ListTile(
-              onTap: (){
-
+              onTap: () {
                 Get.bottomSheet(
                   Container(
-                    decoration:  const BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(30)
-                        )
-                    ),
+                    decoration: const BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(30))),
                     child: Column(
                       children: [
                         ListTile(
-                          onTap: (){
-                            Get.changeTheme( ThemeData.light());
+                          onTap: () {
+                            Get.changeTheme(ThemeData.light());
                           },
                           leading: const Icon(Icons.light_mode),
                           title: const Text('Light mode'),
                           subtitle: const Text('Light mode'),
                         ),
                         ListTile(
-                          onTap: (){
-                            Get.changeTheme( ThemeData.dark());
+                          onTap: () {
+                            Get.changeTheme(ThemeData.dark());
                           },
                           leading: const Icon(Icons.dark_mode),
                           title: const Text('Dark mode'),
@@ -112,8 +95,8 @@ class _GetXUtilScreenState extends State<GetXUtilScreen> {
                         )
                       ],
                     ),
-                  ) ,
-                  elevation: 1 ,
+                  ),
+                  elevation: 1,
                 );
               },
               title: const Text('Get Bottom Sheet'),
@@ -122,20 +105,16 @@ class _GetXUtilScreenState extends State<GetXUtilScreen> {
           ),
           Card(
             child: ListTile(
-              onTap: (){
+              onTap: () {
                 GetUtils.isEmail('axiftaj@gmail.com').printError(info: 'error');
               },
               title: const Text('GetX Utils'),
               subtitle: const Text('Getx Utilities'),
             ),
           ),
-
         ],
       ),
-      floatingActionButton: FloatingActionButton(onPressed: (){
-
-
-      }),
+      floatingActionButton: FloatingActionButton(onPressed: () {}),
     );
   }
 }

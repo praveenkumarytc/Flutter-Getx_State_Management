@@ -1,14 +1,10 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx/getx_routes/getx_routes_screen.dart';
 import 'package:getx/getx_utils/getx_utils_screen.dart';
-import 'package:getx/state_management_example/counter_screen.dart';
 import 'package:getx/state_management_example/state_management_screen.dart';
 
 import 'getx_localization/get_localization_screen.dart';
-
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -22,13 +18,13 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('GetX Tutorials'),
+        title: const Text('GetX Tutorials'),
       ),
       body: Column(
         children: [
           Card(
             child: ListTile(
-              onTap: (){
+              onTap: () {
                 Get.to(const GetXUtilScreen());
               },
               title: const Text('GetX Utils'),
@@ -37,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Card(
             child: ListTile(
-              onTap: (){
+              onTap: () {
                 Get.to(const GetXRoutesScreen());
               },
               title: const Text('GetX Routes'),
@@ -46,17 +42,16 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Card(
             child: ListTile(
-              onTap: (){
+              onTap: () {
                 Get.to(const GetXLocalizationScreen());
               },
               title: const Text('GetX Localization'),
               subtitle: const Text('Change language of the app using GetX'),
             ),
           ),
-
           Card(
             child: ListTile(
-              onTap: (){
+              onTap: () {
                 Get.to(const StateManagementScreen());
               },
               title: const Text('GetX State Management'),
@@ -65,10 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(onPressed: (){
-
-
-      }),
+      floatingActionButton: FloatingActionButton(onPressed: () {}),
     );
   }
 }

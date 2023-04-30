@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:getx/controllers/login_controller.dart';
-
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -12,14 +10,13 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-
   final controller = Get.put(LoginController());
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
-        title: Text('Login GetX'),
+        title: const Text('Login GetX'),
       ),
       body: SafeArea(
         child: Padding(
@@ -30,28 +27,28 @@ class _LoginScreenState extends State<LoginScreen> {
             children: [
               TextFormField(
                 controller: controller.emailController.value,
-                decoration: InputDecoration(
-                  hintText: 'Email'
-                ),
+                decoration: const InputDecoration(hintText: 'Email'),
               ),
               TextFormField(
                 controller: controller.password.value,
                 obscureText: true,
-                decoration: InputDecoration(
-                    hintText: 'Password'
-                ),
+                decoration: const InputDecoration(hintText: 'Password'),
               ),
-              SizedBox(height: 40,),
+              const SizedBox(
+                height: 40,
+              ),
               Obx(() => InkWell(
-                onTap: (){
-                  controller.loginApi();
-                },
-                child: controller.loading.value ? Center(child: CircularProgressIndicator()) :  Container(
-                  height: 45,
-                  color: Colors.green,
-                  child: Center(child: Text('Login')),
-                ),
-              ))
+                    onTap: () {
+                      controller.loginApi();
+                    },
+                    child: controller.loading.value
+                        ? const Center(child: CircularProgressIndicator())
+                        : Container(
+                            height: 45,
+                            color: Colors.green,
+                            child: const Center(child: Text('Login')),
+                          ),
+                  ))
             ],
           ),
         ),
